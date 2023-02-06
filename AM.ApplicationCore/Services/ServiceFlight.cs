@@ -47,5 +47,66 @@ namespace AM.ApplicationCore.Services
                 }
             }
         }
+
+        public void GetFlights(string filterType, string filterValue)
+        {
+            switch (filterType)
+            {
+                case "Destination":
+                    {
+                        var result = Flights.Where(f => f.Destination == filterValue).ToList();
+                        foreach (var f in result)
+                        {
+                            Console.WriteLine(f);
+                        }
+                    }
+                    break;
+                case "Departure":
+                    {
+                        var result = Flights.Where(f => f.Departure == filterValue).ToList();
+                        foreach (var f in result)
+                        {
+                            Console.WriteLine(f);
+                        }
+                    }
+                    break;
+                case "FlightDate":
+                    {
+                        var result = Flights.Where(f => f.FlightDate == DateTime.Parse(filterValue)).ToList();
+                        foreach (var f in result)
+                        {
+                            Console.WriteLine(f);
+                        }
+                    }
+                    break;
+                case "FlightId":
+                    {
+                        var result = Flights.Where(f => f.FlightId == int.Parse(filterValue)).ToList();
+                        foreach (var f in result)
+                        {
+                            Console.WriteLine(f);
+                        }
+                    }
+                    break;
+                case "EffectiveArrival":
+                    {
+                        var result = Flights.Where(f => f.EffectiveArrival == DateTime.Parse(filterValue)).ToList();
+                        foreach (var f in result)
+                        {
+                            Console.WriteLine(f);
+                        }
+                    }
+                    break;
+                case "EstimatedDuration":
+                    {
+                        var result = Flights.Where(f => f.EstimatedDuration == int.Parse(filterValue)).ToList();
+                        foreach (var f in result)
+                        {
+                            Console.WriteLine(f);
+                        }
+                    }
+                    break;
+            }
+        }
     }
 }

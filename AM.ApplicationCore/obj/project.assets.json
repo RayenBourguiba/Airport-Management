@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Main\\TWIN\\Net\\SC1\\RayenBourguiba\\AM.ApplicationCore\\AM.ApplicationCore.csproj",
+      "projectUniqueName": "C:\\Main\\TWIN\\Net\\Airport-Management\\AM.ApplicationCore\\AM.ApplicationCore.csproj",
       "projectName": "AM.ApplicationCore",
-      "projectPath": "C:\\Main\\TWIN\\Net\\SC1\\RayenBourguiba\\AM.ApplicationCore\\AM.ApplicationCore.csproj",
+      "projectPath": "C:\\Main\\TWIN\\Net\\Airport-Management\\AM.ApplicationCore\\AM.ApplicationCore.csproj",
       "packagesPath": "C:\\Users\\RayenBourguiba\\.nuget\\packages\\",
-      "outputPath": "C:\\Main\\TWIN\\Net\\SC1\\RayenBourguiba\\AM.ApplicationCore\\obj\\",
+      "outputPath": "C:\\Main\\TWIN\\Net\\Airport-Management\\AM.ApplicationCore\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\RayenBourguiba\\AppData\\Roaming\\NuGet\\NuGet.Config",

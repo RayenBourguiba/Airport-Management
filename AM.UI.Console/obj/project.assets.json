@@ -32,11 +32,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Main\\TWIN\\Net\\SC1\\RayenBourguiba\\AM.UI.Console\\AM.UI.Console.csproj",
+      "projectUniqueName": "C:\\Main\\TWIN\\Net\\Airport-Management\\AM.UI.Console\\AM.UI.Console.csproj",
       "projectName": "AM.UI.Console",
-      "projectPath": "C:\\Main\\TWIN\\Net\\SC1\\RayenBourguiba\\AM.UI.Console\\AM.UI.Console.csproj",
+      "projectPath": "C:\\Main\\TWIN\\Net\\Airport-Management\\AM.UI.Console\\AM.UI.Console.csproj",
       "packagesPath": "C:\\Users\\RayenBourguiba\\.nuget\\packages\\",
-      "outputPath": "C:\\Main\\TWIN\\Net\\SC1\\RayenBourguiba\\AM.UI.Console\\obj\\",
+      "outputPath": "C:\\Main\\TWIN\\Net\\Airport-Management\\AM.UI.Console\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\RayenBourguiba\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -53,8 +53,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Main\\TWIN\\Net\\SC1\\RayenBourguiba\\AM.ApplicationCore\\AM.ApplicationCore.csproj": {
-              "projectPath": "C:\\Main\\TWIN\\Net\\SC1\\RayenBourguiba\\AM.ApplicationCore\\AM.ApplicationCore.csproj"
+            "C:\\Main\\TWIN\\Net\\Airport-Management\\AM.ApplicationCore\\AM.ApplicationCore.csproj": {
+              "projectPath": "C:\\Main\\TWIN\\Net\\Airport-Management\\AM.ApplicationCore\\AM.ApplicationCore.csproj"
             }
           }
         }
