@@ -20,7 +20,7 @@ namespace AM.ApplicationCore
 
         public override string GetPassengerType()
         {
-            return "I am a traveller";
+            return base.GetPassengerType() + " I am a traveller";
         }
     }
 }

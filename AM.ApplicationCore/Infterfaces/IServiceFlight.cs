@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AM.ApplicationCore
+namespace AM.ApplicationCore.Infterfaces
 {
-    public enum PlaneType
+    public interface IServiceFlight
     {
-        Boing,
-        Airbus
     }
 }

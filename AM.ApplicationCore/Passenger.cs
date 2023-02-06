@@ -11,7 +11,7 @@ namespace AM.ApplicationCore
     public class Passenger
     {
         public DateTime BirthDate { get; set; }
-        public int PasseportNumber { get; set; }
+        public string PasseportNumber { get; set; }
         public string EmailAdress { get;set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
