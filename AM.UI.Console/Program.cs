@@ -72,8 +72,7 @@ namespace AM.UI.Console
 
             serviceFlight.Flights = TestData.Flights;
 
-
-
+            serviceFlight.DestinationGroupedFlights();
         }
     }
 }

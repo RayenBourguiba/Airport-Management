@@ -21,11 +21,11 @@ namespace AM.ApplicationCore
         public override string ToString()
         {
             return "Destination:" + Destination +
-                ", Departure: " + Departure +
-                ", FlightDate: " + FlightDate +
-                ", FlightId: " + FlightId +
-                ", EffectiveArrival: " + EffectiveArrival +
-                ", EstimatedDuration: " + EstimatedDuration;
+                ",  \nDeparture: " + Departure +
+                ",  \nFlightDate: " + FlightDate +
+                ",  \nFlightId: " + FlightId +
+                ",  \nEffectiveArrival: " + EffectiveArrival +
+                ",  \nEstimatedDuration: " + EstimatedDuration;
         }
     }
 }

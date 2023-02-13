@@ -37,13 +37,65 @@ namespace AM.ApplicationCore.Services
             }
         }*/
 
-        IEnumerable<DateTime> GetFlightDates(string destination)
+        /*IEnumerable<DateTime> GetFlightDates(string destination)
         {
             foreach (var flight in Flights)
             {
                 if (flight.Destination == destination)
                 {
                     yield return flight.FlightDate;
+                }
+            }
+        }*/
+
+        IList<DateTime> GetFlightDates(string destination)
+        {
+            return Flights.Where(f=>f.Destination == destination).Select(f=>f.FlightDate).ToList();
+        }
+
+        public void ShowFlightDetails(Plane plane)
+        {
+            var result = from f in plane.Flights
+                         select new
+                         {
+                             Destination = f.Destination,
+                             FlightDate = f.FlightDate
+                         };
+            foreach (var obj in result)
+            {
+                Console.WriteLine(obj.FlightDate + " : " + obj.Destination);
+            }
+        }
+
+        public int ProgrammedFlightNumber(DateTime startDate)
+        {
+            return Flights.Where(f => f.FlightDate >= startDate && f.FlightDate <= startDate.AddDays(7)).Count();
+        }
+
+        public double DurationAverage(string destination)
+        {
+            return Flights.Where(f => f.Destination == destination).Select(f => f.EstimatedDuration).Average();
+        }
+
+        public IList<Flight> OrderedDurationFlights()
+        {
+            return Flights.OrderByDescending(f => f.EstimatedDuration).ToList();
+        }
+
+        public IList<Traveller> SeniorTravellers(Flight flight)
+        {
+            return flight.Passengers.OfType<Traveller>().OrderByDescending(p=>p.BirthDate).Take(3).ToList<Traveller>();
+        }
+
+        public void DestinationGroupedFlights()
+        {
+            var result = from f in Flights group f by f.Destination;
+            foreach (var group in result)
+            {
+                Console.WriteLine(group.Key+ "\n");
+                foreach (var f in group)
+                {
+                    Console.WriteLine(f+"\n");
                 }
             }
         }
