@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,12 +13,30 @@ namespace AM.ApplicationCore.Services
 
         public Action<Plane> FlightDetailsDel;
         public Func<string, double> DurationAverageDel;
-        public List<Flight> Flights { get; set;} = new List<Flight>();
+        public List<Flight> Flights { get; set; } = new List<Flight>();
 
         public ServiceFlight() {
-            FlightDetailsDel = ShowFlightDetails;
-            DurationAverageDel = DurationAverage;
-        }
+            //FlightDetailsDel = ShowFlightDetails;
+            //DurationAverageDel = DurationAverage;
+
+            FlightDetailsDel = plane =>
+            {
+                var result = from f in plane.Flights
+                             select new
+                             {
+                                 Destination = f.Destination,
+                                 FlightDate = f.FlightDate
+                             };
+                foreach (var obj in result)
+                {
+                    Console.WriteLine(obj.FlightDate + " : " + obj.Destination);
+                }
+                DurationAverageDel =  destination=>
+        {
+                    return Flights.Where(f => f.Destination == destination).Select(f => f.EstimatedDuration).Average();
+                };
+            };
+        } 
 
         /*List<DateTime> GetFlightDates(string destination)
         {
