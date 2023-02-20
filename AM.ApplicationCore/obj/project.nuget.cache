@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "86BOiDaI8qeTPUbdINf+vd9dZrTMvr6vnq+ywZOEeXFDCeJIBBOj6sjslnWFxu1u33ns9INAYVEPBd5QBivOfQ==",
+  "success": true,
+  "projectFilePath": "C:\\Main\\TWIN\\Net\\Airport-Management\\AM.ApplicationCore\\AM.ApplicationCore.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\RayenBourguiba\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.3\\microsoft.entityframeworkcore.abstractions.7.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
