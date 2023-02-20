@@ -1214,6 +1214,19 @@
             "rid": "win"
           }
         }
+      },
+      "AM.ApplicationCore/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.entityframeworkcore.Abstractions": "7.0.3"
+        },
+        "compile": {
+          "bin/placeholder/AM.ApplicationCore.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AM.ApplicationCore.dll": {}
+        }
       }
     }
   },
@@ -3628,10 +3641,16 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "AM.ApplicationCore/1.0.0": {
+      "type": "project",
+      "path": "../AM.ApplicationCore/AM.ApplicationCore.csproj",
+      "msbuildProject": "../AM.ApplicationCore/AM.ApplicationCore.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "AM.ApplicationCore >= 1.0.0",
       "Microsoft.entityframeworkcore >= 7.0.3",
       "Microsoft.entityframeworkcore.Proxies >= 7.0.3",
       "Microsoft.entityframeworkcore.SqlServer >= 7.0.3",
@@ -3664,7 +3683,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Main\\TWIN\\Net\\Airport-Management\\AM.ApplicationCore\\AM.ApplicationCore.csproj": {
+              "projectPath": "C:\\Main\\TWIN\\Net\\Airport-Management\\AM.ApplicationCore\\AM.ApplicationCore.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

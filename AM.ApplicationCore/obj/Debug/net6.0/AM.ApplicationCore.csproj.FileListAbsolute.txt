@@ -10,3 +10,15 @@ C:\Main\TWIN\Net\SC1\RayenBourguiba\AM.ApplicationCore\obj\Debug\net6.0\AM.Appli
 C:\Main\TWIN\Net\SC1\RayenBourguiba\AM.ApplicationCore\obj\Debug\net6.0\refint\AM.ApplicationCore.dll
 C:\Main\TWIN\Net\SC1\RayenBourguiba\AM.ApplicationCore\obj\Debug\net6.0\AM.ApplicationCore.pdb
 C:\Main\TWIN\Net\SC1\RayenBourguiba\AM.ApplicationCore\obj\Debug\net6.0\ref\AM.ApplicationCore.dll
+C:\Main\TWIN\Net\Airport-Management\AM.ApplicationCore\bin\Debug\net6.0\AM.ApplicationCore.deps.json
+C:\Main\TWIN\Net\Airport-Management\AM.ApplicationCore\bin\Debug\net6.0\AM.ApplicationCore.dll
+C:\Main\TWIN\Net\Airport-Management\AM.ApplicationCore\bin\Debug\net6.0\AM.ApplicationCore.pdb
+C:\Main\TWIN\Net\Airport-Management\AM.ApplicationCore\obj\Debug\net6.0\AM.ApplicationCore.csproj.AssemblyReference.cache
+C:\Main\TWIN\Net\Airport-Management\AM.ApplicationCore\obj\Debug\net6.0\AM.ApplicationCore.GeneratedMSBuildEditorConfig.editorconfig
+C:\Main\TWIN\Net\Airport-Management\AM.ApplicationCore\obj\Debug\net6.0\AM.ApplicationCore.AssemblyInfoInputs.cache
+C:\Main\TWIN\Net\Airport-Management\AM.ApplicationCore\obj\Debug\net6.0\AM.ApplicationCore.AssemblyInfo.cs
+C:\Main\TWIN\Net\Airport-Management\AM.ApplicationCore\obj\Debug\net6.0\AM.ApplicationCore.csproj.CoreCompileInputs.cache
+C:\Main\TWIN\Net\Airport-Management\AM.ApplicationCore\obj\Debug\net6.0\AM.ApplicationCore.dll
+C:\Main\TWIN\Net\Airport-Management\AM.ApplicationCore\obj\Debug\net6.0\refint\AM.ApplicationCore.dll
+C:\Main\TWIN\Net\Airport-Management\AM.ApplicationCore\obj\Debug\net6.0\AM.ApplicationCore.pdb
+C:\Main\TWIN\Net\Airport-Management\AM.ApplicationCore\obj\Debug\net6.0\ref\AM.ApplicationCore.dll

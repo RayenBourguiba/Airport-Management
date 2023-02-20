@@ -10,6 +10,7 @@ namespace AM.ApplicationCore
 {
     public class Passenger
     {
+        public int Id { get; set; }
         public DateTime BirthDate { get; set; }
         public string PasseportNumber { get; set; }
         public string EmailAdress { get;set; }
