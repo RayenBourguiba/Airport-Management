@@ -15,7 +15,7 @@ namespace AM.Infrastructure.Migrations
                 name: "Passengers",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
+                    PassengerId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     BirthDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     PasseportNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -32,7 +32,7 @@ namespace AM.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Passengers", x => x.Id);
+                    table.PrimaryKey("PK_Passengers", x => x.PassengerId);
                 });
 
             migrationBuilder.CreateTable(
@@ -79,11 +79,11 @@ namespace AM.Infrastructure.Migrations
                 columns: table => new
                 {
                     FlightsFlightId = table.Column<int>(type: "int", nullable: false),
-                    PassengersId = table.Column<int>(type: "int", nullable: false)
+                    PassengersPassengerId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_FlightPassenger", x => new { x.FlightsFlightId, x.PassengersId });
+                    table.PrimaryKey("PK_FlightPassenger", x => new { x.FlightsFlightId, x.PassengersPassengerId });
                     table.ForeignKey(
                         name: "FK_FlightPassenger_Flights_FlightsFlightId",
                         column: x => x.FlightsFlightId,
@@ -91,17 +91,17 @@ namespace AM.Infrastructure.Migrations
                         principalColumn: "FlightId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_FlightPassenger_Passengers_PassengersId",
-                        column: x => x.PassengersId,
+                        name: "FK_FlightPassenger_Passengers_PassengersPassengerId",
+                        column: x => x.PassengersPassengerId,
                         principalTable: "Passengers",
-                        principalColumn: "Id",
+                        principalColumn: "PassengerId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_FlightPassenger_PassengersId",
+                name: "IX_FlightPassenger_PassengersPassengerId",
                 table: "FlightPassenger",
-                column: "PassengersId");
+                column: "PassengersPassengerId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Flights_PlaneId",

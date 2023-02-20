@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AM.Infrastructure.Migrations
 {
     [DbContext(typeof(AMContext))]
-    [Migration("20230220103602_initial")]
+    [Migration("20230220104615_initial")]
     partial class initial
     {
         /// <inheritdoc />
@@ -62,11 +62,11 @@ namespace AM.Infrastructure.Migrations
 
             modelBuilder.Entity("AM.ApplicationCore.Passenger", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("PassengerId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PassengerId"));
 
                     b.Property<DateTime>("BirthDate")
                         .HasColumnType("datetime2");
@@ -94,7 +94,7 @@ namespace AM.Infrastructure.Migrations
                     b.Property<int>("TelNumber")
                         .HasColumnType("int");
 
-                    b.HasKey("Id");
+                    b.HasKey("PassengerId");
 
                     b.ToTable("Passengers");
 
@@ -130,12 +130,12 @@ namespace AM.Infrastructure.Migrations
                     b.Property<int>("FlightsFlightId")
                         .HasColumnType("int");
 
-                    b.Property<int>("PassengersId")
+                    b.Property<int>("PassengersPassengerId")
                         .HasColumnType("int");
 
-                    b.HasKey("FlightsFlightId", "PassengersId");
+                    b.HasKey("FlightsFlightId", "PassengersPassengerId");
 
-                    b.HasIndex("PassengersId");
+                    b.HasIndex("PassengersPassengerId");
 
                     b.ToTable("FlightPassenger");
                 });
@@ -193,7 +193,7 @@ namespace AM.Infrastructure.Migrations
 
                     b.HasOne("AM.ApplicationCore.Passenger", null)
                         .WithMany()
-                        .HasForeignKey("PassengersId")
+                        .HasForeignKey("PassengersPassengerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
