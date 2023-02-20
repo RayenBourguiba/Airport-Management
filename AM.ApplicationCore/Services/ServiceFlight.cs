@@ -9,7 +9,15 @@ namespace AM.ApplicationCore.Services
 {
     public class ServiceFlight : IServiceFlight
     {
+
+        public Action<Plane> FlightDetailsDel;
+        public Func<string, double> DurationAverageDel;
         public List<Flight> Flights { get; set;} = new List<Flight>();
+
+        public ServiceFlight() {
+            FlightDetailsDel = ShowFlightDetails;
+            DurationAverageDel = DurationAverage;
+        }
 
         /*List<DateTime> GetFlightDates(string destination)
         {
@@ -48,7 +56,7 @@ namespace AM.ApplicationCore.Services
             }
         }*/
 
-        IList<DateTime> GetFlightDates(string destination)
+        public IList<DateTime> GetFlightDates(string destination)
         {
             return Flights.Where(f=>f.Destination == destination).Select(f=>f.FlightDate).ToList();
         }
@@ -84,7 +92,7 @@ namespace AM.ApplicationCore.Services
 
         public IList<Traveller> SeniorTravellers(Flight flight)
         {
-            return flight.Passengers.OfType<Traveller>().OrderByDescending(p=>p.BirthDate).Take(3).ToList<Traveller>();
+            return flight.Passengers.OfType<Traveller>().OrderBy(p=>p.BirthDate).Take(3).ToList<Traveller>();
         }
 
         public void DestinationGroupedFlights()
@@ -92,10 +100,10 @@ namespace AM.ApplicationCore.Services
             var result = from f in Flights group f by f.Destination;
             foreach (var group in result)
             {
-                Console.WriteLine(group.Key+ "\n");
+                Console.WriteLine("Destination: "+group.Key+ "\n");
                 foreach (var f in group)
                 {
-                    Console.WriteLine(f+"\n");
+                    Console.WriteLine("Decollage: "+f.FlightDate+"\n");
                 }
             }
         }
