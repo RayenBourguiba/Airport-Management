@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace AM.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class initial : Migration
+    public partial class dataAnnotation : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -15,24 +15,17 @@ namespace AM.Infrastructure.Migrations
                 name: "Passengers",
                 columns: table => new
                 {
-                    PassengerId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    PasseportNumber = table.Column<string>(type: "nvarchar(7)", maxLength: 7, nullable: false),
+                    PassengerId = table.Column<int>(type: "int", nullable: false),
                     BirthDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    PasseportNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     EmailAdress = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    FirstName = table.Column<string>(type: "nvarchar(25)", maxLength: 25, nullable: false),
                     LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    TelNumber = table.Column<int>(type: "int", nullable: false),
-                    Discriminator = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    EmploymentDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    Function = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Salary = table.Column<float>(type: "real", nullable: true),
-                    HealthInformation = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Nationality = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    TelNumber = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Passengers", x => x.PassengerId);
+                    table.PrimaryKey("PK_Passengers", x => x.PasseportNumber);
                 });
 
             migrationBuilder.CreateTable(
@@ -61,6 +54,7 @@ namespace AM.Infrastructure.Migrations
                     FlightDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     EffectiveArrival = table.Column<DateTime>(type: "datetime2", nullable: false),
                     EstimatedDuration = table.Column<int>(type: "int", nullable: false),
+                    Airline = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     PlaneId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -79,11 +73,11 @@ namespace AM.Infrastructure.Migrations
                 columns: table => new
                 {
                     FlightsFlightId = table.Column<int>(type: "int", nullable: false),
-                    PassengersPassengerId = table.Column<int>(type: "int", nullable: false)
+                    PassengersPasseportNumber = table.Column<string>(type: "nvarchar(7)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_FlightPassenger", x => new { x.FlightsFlightId, x.PassengersPassengerId });
+                    table.PrimaryKey("PK_FlightPassenger", x => new { x.FlightsFlightId, x.PassengersPasseportNumber });
                     table.ForeignKey(
                         name: "FK_FlightPassenger_Flights_FlightsFlightId",
                         column: x => x.FlightsFlightId,
@@ -91,17 +85,17 @@ namespace AM.Infrastructure.Migrations
                         principalColumn: "FlightId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_FlightPassenger_Passengers_PassengersPassengerId",
-                        column: x => x.PassengersPassengerId,
+                        name: "FK_FlightPassenger_Passengers_PassengersPasseportNumber",
+                        column: x => x.PassengersPasseportNumber,
                         principalTable: "Passengers",
-                        principalColumn: "PassengerId",
+                        principalColumn: "PasseportNumber",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_FlightPassenger_PassengersPassengerId",
+                name: "IX_FlightPassenger_PassengersPasseportNumber",
                 table: "FlightPassenger",
-                column: "PassengersPassengerId");
+                column: "PassengersPasseportNumber");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Flights_PlaneId",
