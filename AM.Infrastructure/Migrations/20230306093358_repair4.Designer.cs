@@ -4,6 +4,7 @@ using AM.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AM.Infrastructure.Migrations
 {
     [DbContext(typeof(AmContext))]
-    partial class AmContextModelSnapshot : ModelSnapshot
+    [Migration("20230306093358_repair4")]
+    partial class repair4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -71,6 +74,11 @@ namespace AM.Infrastructure.Migrations
                     b.Property<DateTime>("BirthDate")
                         .HasColumnType("date");
 
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar");
+
                     b.Property<string>("EmailAddress")
                         .IsRequired()
                         .HasMaxLength(100)
@@ -84,14 +92,11 @@ namespace AM.Infrastructure.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("varchar");
 
-                    b.Property<int>("isTraveller")
-                        .HasColumnType("int");
-
                     b.HasKey("PassportNumber");
 
                     b.ToTable("Passengers");
 
-                    b.HasDiscriminator<int>("isTraveller").HasValue(48);
+                    b.HasDiscriminator<string>("Discriminator").HasValue("Passenger");
 
                     b.UseTphMappingStrategy();
                 });
@@ -149,7 +154,7 @@ namespace AM.Infrastructure.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("varchar");
 
-                    b.HasDiscriminator().HasValue(49);
+                    b.HasDiscriminator().HasValue("Staff");
                 });
 
             modelBuilder.Entity("AM.ApplicationCore.Domain.Traveller", b =>
@@ -166,7 +171,7 @@ namespace AM.Infrastructure.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("varchar");
 
-                    b.HasDiscriminator().HasValue(50);
+                    b.HasDiscriminator().HasValue("Traveller");
                 });
 
             modelBuilder.Entity("AM.ApplicationCore.Domain.Flight", b =>

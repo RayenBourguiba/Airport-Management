@@ -47,6 +47,11 @@ namespace AM.Infrastructure
             modelBuilder.ApplyConfiguration(new PassengerConfiguration());
             modelBuilder.ApplyConfiguration(new FlightConfiguration());
             modelBuilder.ApplyConfiguration(new PlaneConfiguration());
+            // modelBuilder.Entity<Passenger>().HasDiscriminator<int>("isTraveller").HasValue<Passenger>('0').HasValue<Staff>('1').HasValue<Traveller>('2');
+
+            //modelBuilder.Entity<Staff>().ToTable("Staffs");
+            //modelBuilder.Entity<Traveller>().ToTable("Travellers");
+
 
         }
 

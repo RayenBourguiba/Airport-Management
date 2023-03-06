@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AM.Infrastructure.Migrations
 {
     [DbContext(typeof(AmContext))]
-    [Migration("20230306085759_repair")]
-    partial class repair
+    [Migration("20230306102805_tph")]
+    partial class tph
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -74,24 +74,7 @@ namespace AM.Infrastructure.Migrations
                     b.Property<DateTime>("BirthDate")
                         .HasColumnType("date");
 
-                    b.Property<string>("Discriminator")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("varchar");
-
                     b.Property<string>("EmailAddress")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("varchar");
-
-                    b.Property<string>("FirstName")
-                        .IsRequired()
-                        .ValueGeneratedOnAdd()
-                        .HasMaxLength(80)
-                        .HasColumnType("nchar")
-                        .HasDefaultValue("name");
-
-                    b.Property<string>("LastName")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("varchar");
@@ -104,11 +87,14 @@ namespace AM.Infrastructure.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("varchar");
 
+                    b.Property<int>("isTraveller")
+                        .HasColumnType("int");
+
                     b.HasKey("PassportNumber");
 
                     b.ToTable("Passengers");
 
-                    b.HasDiscriminator<string>("Discriminator").HasValue("Passenger");
+                    b.HasDiscriminator<int>("isTraveller").HasValue(48);
 
                     b.UseTphMappingStrategy();
                 });
@@ -166,7 +152,7 @@ namespace AM.Infrastructure.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("varchar");
 
-                    b.HasDiscriminator().HasValue("Staff");
+                    b.HasDiscriminator().HasValue(49);
                 });
 
             modelBuilder.Entity("AM.ApplicationCore.Domain.Traveller", b =>
@@ -183,7 +169,7 @@ namespace AM.Infrastructure.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("varchar");
 
-                    b.HasDiscriminator().HasValue("Traveller");
+                    b.HasDiscriminator().HasValue(50);
                 });
 
             modelBuilder.Entity("AM.ApplicationCore.Domain.Flight", b =>
@@ -194,6 +180,37 @@ namespace AM.Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.SetNull);
 
                     b.Navigation("Plane");
+                });
+
+            modelBuilder.Entity("AM.ApplicationCore.Domain.Passenger", b =>
+                {
+                    b.OwnsOne("AM.ApplicationCore.FullName", "FullName", b1 =>
+                        {
+                            b1.Property<int>("PassengerPassportNumber")
+                                .HasColumnType("int");
+
+                            b1.Property<string>("FirstName")
+                                .IsRequired()
+                                .HasMaxLength(100)
+                                .HasColumnType("varchar")
+                                .HasColumnName("FirstName");
+
+                            b1.Property<string>("LastName")
+                                .IsRequired()
+                                .HasMaxLength(100)
+                                .HasColumnType("varchar")
+                                .HasColumnName("LastName");
+
+                            b1.HasKey("PassengerPassportNumber");
+
+                            b1.ToTable("Passengers");
+
+                            b1.WithOwner()
+                                .HasForeignKey("PassengerPassportNumber");
+                        });
+
+                    b.Navigation("FullName")
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("FlightPassenger", b =>

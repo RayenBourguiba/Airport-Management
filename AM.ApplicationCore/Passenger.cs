@@ -19,22 +19,24 @@ namespace AM.ApplicationCore.Domain
         //[DatatType(Datatype.EmailAddress)]
         [EmailAddress]
         public String EmailAddress { get; set; }
-        [MinLength(3, ErrorMessage = "doit être >3"), MaxLength(25, ErrorMessage = " doit être <25")]
+        /*[MinLength(3, ErrorMessage = "doit être >3"), MaxLength(25, ErrorMessage = " doit être <25")]
         public String FirstName { get; set; }
-        public String LastName { get; set; }
+        public String LastName { get; set; }*/
+        public FullName FullName { get; set; }
         [RegularExpression("[0-9]{8}")]
         public String TelNumber { get; set; }
+        public int isTraveller { get; set; }
 
 
 
-        public bool CheckProfile(string Fn, string Ln, string Em = null)
+        /*public bool CheckProfile(string Fn, string Ln, string Em = null)
         {
             if (Em != null)
             {
                 return Fn == FirstName && Ln == LastName && Em == EmailAddress;
             }
             return Fn == FirstName && Ln == LastName;
-        }
+        }*/
         public virtual void PassengerType()
         {
             Console.WriteLine("I'm a passenger");

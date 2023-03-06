@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace AM.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class repair : Migration
+    public partial class repair4 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -35,7 +35,7 @@ namespace AM.Infrastructure.Migrations
                     PassengerId = table.Column<int>(type: "int", nullable: false),
                     BirthDate = table.Column<DateTime>(type: "date", nullable: false),
                     EmailAddress = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false),
-                    FirstName = table.Column<string>(type: "nchar(80)", maxLength: 80, nullable: false, defaultValue: "name"),
+                    FirstName = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false),
                     LastName = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false),
                     TelNumber = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false),
                     Discriminator = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false),

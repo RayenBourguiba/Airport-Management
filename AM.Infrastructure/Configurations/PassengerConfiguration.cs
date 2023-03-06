@@ -1,4 +1,5 @@
 ﻿using AM.ApplicationCore.Domain;
+using AM.ApplicationCore.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
@@ -14,13 +15,19 @@ namespace AM.Infrastructure.Configurations
     {
         public void Configure(EntityTypeBuilder<Passenger> builder)
         {
-            builder.Property(p => p.FirstName)
+            /*builder.Property(p => p.FirstName)
                 .IsRequired()
                 .HasMaxLength(80)
                 .HasDefaultValue("name")
-                .HasColumnType("nchar");
+                .HasColumnType("nchar");*/
+
+            builder.OwnsOne(p => p.FullName, fn =>
+            {
+                fn.Property(a => a.FirstName).HasColumnName("FirstName");
+                fn.Property(a => a.LastName).HasColumnName("LastName");
+            });
+
+            builder.HasDiscriminator<int>("isTraveller").HasValue<Passenger>('0').HasValue<Staff>('1').HasValue<Traveller>('2');
         }
-
-
     }
 }

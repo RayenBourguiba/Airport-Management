@@ -70,7 +70,8 @@ namespace AM.UI.Console
 
             ServiceFlight serviceFlight = new ServiceFlight();
 
-            serviceFlight.Flights = TestData.Flights;
+            //serviceFlight.Flights = TestData.Flights;
+            //serviceFlight.Flights = TestData.Flights;
 
             serviceFlight.DestinationGroupedFlights();
         }
