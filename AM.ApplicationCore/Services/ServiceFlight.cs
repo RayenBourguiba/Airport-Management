@@ -1,4 +1,5 @@
-﻿using AM.ApplicationCore.Infterfaces;
+﻿using AM.ApplicationCore.Domain;
+using AM.ApplicationCore.Infterfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace AM.ApplicationCore.Services
     public class ServiceFlight : IServiceFlight
     {
 
-        public Action<Plane> FlightDetailsDel;
+        public Action<Domain.Plane> FlightDetailsDel;
         public Func<string, double> DurationAverageDel;
         public List<Flight> Flights { get; set; } = new List<Flight>();
 
@@ -80,7 +81,7 @@ namespace AM.ApplicationCore.Services
             return Flights.Where(f=>f.Destination == destination).Select(f=>f.FlightDate).ToList();
         }
 
-        public void ShowFlightDetails(Plane plane)
+        public void ShowFlightDetails(Domain.Plane plane)
         {
             var result = from f in plane.Flights
                          select new

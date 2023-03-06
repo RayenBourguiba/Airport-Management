@@ -4,23 +4,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AM.ApplicationCore
+namespace AM.ApplicationCore.Domain
 {
-    public class Traveller: Passenger
+    public class Traveller : Passenger
     {
-        public string HealthInformation { get; set; }
-        public string Nationality { get; set; }
+        public String HealthInformation { get; set; }
+        public String Nationality { get; set; }
 
-        public override string ToString()
+        public override void PassengerType()
         {
-            return base.ToString() +
-                "HealthInformation:" + HealthInformation +
-                ", Nationality: " + Nationality;
+            base.PassengerType();
+            Console.WriteLine("I am a passenger I'am a Traveller");
         }
 
-        public override string GetPassengerType()
+
+        public override string? ToString()
         {
-            return base.GetPassengerType() + " I am a traveller";
+            return base.ToString();
         }
     }
 }

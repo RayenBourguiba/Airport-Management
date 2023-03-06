@@ -1,57 +1,49 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
-using System.Net.Mail;
-using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel;
 
-namespace AM.ApplicationCore
+namespace AM.ApplicationCore.Domain
 {
     public class Passenger
     {
         public int PassengerId { get; set; }
-        // [DisplayName("Date Of Birth")]
+        //[DisplayName("Date Of Birth")]
         [Display(Name = "Date Of Birth"), DataType(DataType.Date)]
         public DateTime BirthDate { get; set; }
         [Key, StringLength(7)]
-        public string PasseportNumber { get; set; }
-        // [DataType(DataType.EmailAddress)]
+        public int PassportNumber { get; set; }
+        //[DatatType(Datatype.EmailAddress)]
         [EmailAddress]
-        public string EmailAdress { get;set; }
-        [MinLength(3, ErrorMessage="Length must be > 3"),MaxLength(25, ErrorMessage="Length must be < 25")]
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
+        public String EmailAddress { get; set; }
+        [MinLength(3, ErrorMessage = "doit être >3"), MaxLength(25, ErrorMessage = " doit être <25")]
+        public String FirstName { get; set; }
+        public String LastName { get; set; }
         [RegularExpression("[0-9]{8}")]
-        public int TelNumber { get; set; }
-        public ICollection<Flight> Flights { get; set; }
+        public String TelNumber { get; set; }
 
-        public override string ToString()
+
+
+        public bool CheckProfile(string Fn, string Ln, string Em = null)
         {
-            return "BirthDate:" + BirthDate +
-                            ", PassportNumber: " + PasseportNumber +
-                            ", EmailAddress: " + EmailAdress +
-                            ", FirstName: " + FirstName +
-                            ", LastName: " + LastName +
-                            ", TelNumber: " + TelNumber;
+            if (Em != null)
+            {
+                return Fn == FirstName && Ln == LastName && Em == EmailAddress;
+            }
+            return Fn == FirstName && Ln == LastName;
         }
-
-        //public bool CheckProfile(string nom, string prenom) { return FirstName == prenom && LastName == nom; }
-
-        //public bool CheckProfile(string nom, string prenom, string email) { return FirstName == prenom && LastName == nom && EmailAdress=email; }
-
-        public bool CheckProfile(string nom, string prenom, string? email = null)
+        public virtual void PassengerType()
         {
-            return FirstName == prenom
-                && LastName == nom
-                && (email == null || EmailAdress == email);
+            Console.WriteLine("I'm a passenger");
         }
+        public List<Flight>? Flights { get; set; }
 
-        public virtual string GetPassengerType()
+        public override string? ToString()
         {
-            return "I am a passenger";
+            return base.ToString();
         }
     }
 }

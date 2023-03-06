@@ -5,26 +5,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AM.ApplicationCore
+namespace AM.ApplicationCore.Domain
 {
     public class Staff : Passenger
     {
-        public DateTime EmploymentDate { get; set; }
-        public string Function { get; set; }
+        public DateTime EmployementDate { get; set; }
+        public String function { get; set; }
         [DataType(DataType.Currency)]
         public float Salary { get; set; }
 
-        public override string ToString()
+
+        public override void PassengerType()
         {
-            return base.ToString() +
-                "EmploymentDate:" + EmploymentDate +
-                ", Function: " + Function +
-                ", Salary: " + Salary;
+            base.PassengerType();
+            Console.WriteLine(" I'am a Staff Memeber");
         }
 
-        public override string GetPassengerType()
+        public override string? ToString()
         {
-            return base.GetPassengerType() + " I am a staff member";
+            return base.ToString();
         }
     }
 }

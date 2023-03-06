@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AM.ApplicationCore.Domain;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,12 +16,12 @@ namespace AM.ApplicationCore
                 return new List<Plane>()
                 {
                     new Plane(){
-                        MyPlaneType= PlaneType.Boing,
+                        PlaneType= PlaneType.Boing,
                         Capacity= 150,
                         ManufactureDate= new DateTime(2015,02,03)
                     },
                     new Plane(){
-                        MyPlaneType= PlaneType.Airbus,
+                        PlaneType= PlaneType.Airbus,
                         Capacity= 250,
                         ManufactureDate= new DateTime(2020,11,11)
                     }
@@ -38,9 +39,9 @@ namespace AM.ApplicationCore
                     {
                         FirstName="captain",
                         LastName="captain",
-                        EmailAdress= "Captain.captain@gmail.com",
+                        EmailAddress= "Captain.captain@gmail.com",
                         BirthDate = new DateTime(1965,01,01),
-                        EmploymentDate = new DateTime(199,01,01),
+                        EmployementDate = new DateTime(199,01,01),
                         Salary=99999
                     }
                 };
@@ -54,7 +55,7 @@ namespace AM.ApplicationCore
                     {
                         FirstName="Traveller1",
                         LastName="Traveller1",
-                        EmailAdress="Traveller1.Traveller1@gmail.com",
+                        EmailAddress="Traveller1.Traveller1@gmail.com",
                         BirthDate= new DateTime(1980,01,01),
                         HealthInformation="No Troubles",
                         Nationality="American"
