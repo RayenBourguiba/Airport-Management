@@ -1,4 +1,5 @@
-﻿using AM.ApplicationCore.Domain;
+﻿using AM.ApplicationCore;
+using AM.ApplicationCore.Domain;
 using AM.Infrastructure.Configurations;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -47,10 +48,16 @@ namespace AM.Infrastructure
             modelBuilder.ApplyConfiguration(new PassengerConfiguration());
             modelBuilder.ApplyConfiguration(new FlightConfiguration());
             modelBuilder.ApplyConfiguration(new PlaneConfiguration());
+            modelBuilder.ApplyConfiguration(new TicketConfiguration());
+
             // modelBuilder.Entity<Passenger>().HasDiscriminator<int>("isTraveller").HasValue<Passenger>('0').HasValue<Staff>('1').HasValue<Traveller>('2');
 
-            //modelBuilder.Entity<Staff>().ToTable("Staffs");
-            //modelBuilder.Entity<Traveller>().ToTable("Travellers");
+            modelBuilder.Entity<Staff>().ToTable("Staffs");
+            modelBuilder.Entity<Traveller>().ToTable("Travellers");
+            modelBuilder.Entity<Passenger>().ToTable("Passengers");
+
+            // modelBuilder.Entity<Ticket>().HasKey(p => new {p.FlightFK, p.PassengerFK});
+
 
 
         }

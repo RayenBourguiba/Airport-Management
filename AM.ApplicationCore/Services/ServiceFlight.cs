@@ -110,10 +110,10 @@ namespace AM.ApplicationCore.Services
             return Flights.OrderByDescending(f => f.EstimatedDuration).ToList();
         }
 
-        public IList<Traveller> SeniorTravellers(Flight flight)
+        /*public IList<Traveller> SeniorTravellers(Flight flight)
         {
             return flight.Passengers.OfType<Traveller>().OrderBy(p=>p.BirthDate).Take(3).ToList<Traveller>();
-        }
+        }*/
 
         public void DestinationGroupedFlights()
         {

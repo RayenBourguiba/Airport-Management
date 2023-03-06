@@ -26,6 +26,7 @@ namespace AM.ApplicationCore.Domain
         [RegularExpression("[0-9]{8}")]
         public String TelNumber { get; set; }
         public int isTraveller { get; set; }
+        public List<Ticket>? Tickets { get; set; }
 
 
 

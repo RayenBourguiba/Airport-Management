@@ -27,7 +27,7 @@ namespace AM.Infrastructure.Configurations
                 fn.Property(a => a.LastName).HasColumnName("LastName");
             });
 
-            builder.HasDiscriminator<int>("isTraveller").HasValue<Passenger>('0').HasValue<Staff>('1').HasValue<Traveller>('2');
+            //builder.HasDiscriminator<int>("isTraveller").HasValue<Passenger>('0').HasValue<Staff>('1').HasValue<Traveller>('2');
         }
     }
 }

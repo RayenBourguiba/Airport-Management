@@ -23,9 +23,9 @@ namespace AM.Infrastructure.Configurations
                 .HasForeignKey(f => f.PlaneFk)
                 .OnDelete(DeleteBehavior.SetNull);
             // config *..*
-            builder.HasMany(f => f.Passengers)
+            /*builder.HasMany(f => f.Passengers)
                 .WithMany(p => p.Flights)
-                .UsingEntity(pf => pf.ToTable("MyReservations"));
+                .UsingEntity(pf => pf.ToTable("MyReservations"));*/
         }
     }
 }
