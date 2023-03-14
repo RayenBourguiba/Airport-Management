@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\RayenBourguiba\\Downloads\\AirportManagement-main\\AirportManagement-main\\AM.ApplicationCore\\AM.ApplicationCore.csproj": {}
+    "C:\\Main\\TWIN\\Net\\Airport-Management\\AM.ApplicationCore\\AM.ApplicationCore.csproj": {}
   },
   "projects": {
-    "C:\\Users\\RayenBourguiba\\Downloads\\AirportManagement-main\\AirportManagement-main\\AM.ApplicationCore\\AM.ApplicationCore.csproj": {
+    "C:\\Main\\TWIN\\Net\\Airport-Management\\AM.ApplicationCore\\AM.ApplicationCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\RayenBourguiba\\Downloads\\AirportManagement-main\\AirportManagement-main\\AM.ApplicationCore\\AM.ApplicationCore.csproj",
+        "projectUniqueName": "C:\\Main\\TWIN\\Net\\Airport-Management\\AM.ApplicationCore\\AM.ApplicationCore.csproj",
         "projectName": "AM.ApplicationCore",
-        "projectPath": "C:\\Users\\RayenBourguiba\\Downloads\\AirportManagement-main\\AirportManagement-main\\AM.ApplicationCore\\AM.ApplicationCore.csproj",
+        "projectPath": "C:\\Main\\TWIN\\Net\\Airport-Management\\AM.ApplicationCore\\AM.ApplicationCore.csproj",
         "packagesPath": "C:\\Users\\RayenBourguiba\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\RayenBourguiba\\Downloads\\AirportManagement-main\\AirportManagement-main\\AM.ApplicationCore\\obj\\",
+        "outputPath": "C:\\Main\\TWIN\\Net\\Airport-Management\\AM.ApplicationCore\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\RayenBourguiba\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -3663,11 +3663,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\RayenBourguiba\\Downloads\\AirportManagement-main\\AirportManagement-main\\AM.Infrastructure\\AM.Infrastructure.csproj",
+      "projectUniqueName": "C:\\Main\\TWIN\\Net\\Airport-Management\\AM.Infrastructure\\AM.Infrastructure.csproj",
       "projectName": "AM.Infrastructure",
-      "projectPath": "C:\\Users\\RayenBourguiba\\Downloads\\AirportManagement-main\\AirportManagement-main\\AM.Infrastructure\\AM.Infrastructure.csproj",
+      "projectPath": "C:\\Main\\TWIN\\Net\\Airport-Management\\AM.Infrastructure\\AM.Infrastructure.csproj",
       "packagesPath": "C:\\Users\\RayenBourguiba\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\RayenBourguiba\\Downloads\\AirportManagement-main\\AirportManagement-main\\AM.Infrastructure\\obj\\",
+      "outputPath": "C:\\Main\\TWIN\\Net\\Airport-Management\\AM.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\RayenBourguiba\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3684,8 +3684,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\RayenBourguiba\\Downloads\\AirportManagement-main\\AirportManagement-main\\AM.ApplicationCore\\AM.ApplicationCore.csproj": {
-              "projectPath": "C:\\Users\\RayenBourguiba\\Downloads\\AirportManagement-main\\AirportManagement-main\\AM.ApplicationCore\\AM.ApplicationCore.csproj"
+            "C:\\Main\\TWIN\\Net\\Airport-Management\\AM.ApplicationCore\\AM.ApplicationCore.csproj": {
+              "projectPath": "C:\\Main\\TWIN\\Net\\Airport-Management\\AM.ApplicationCore\\AM.ApplicationCore.csproj"
             }
           }
         }
