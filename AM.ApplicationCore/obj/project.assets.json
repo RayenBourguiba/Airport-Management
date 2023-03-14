@@ -44,11 +44,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Main\\TWIN\\Net\\Airport-Management\\AM.ApplicationCore\\AM.ApplicationCore.csproj",
+      "projectUniqueName": "C:\\Users\\RayenBourguiba\\Downloads\\AirportManagement-main\\AirportManagement-main\\AM.ApplicationCore\\AM.ApplicationCore.csproj",
       "projectName": "AM.ApplicationCore",
-      "projectPath": "C:\\Main\\TWIN\\Net\\Airport-Management\\AM.ApplicationCore\\AM.ApplicationCore.csproj",
+      "projectPath": "C:\\Users\\RayenBourguiba\\Downloads\\AirportManagement-main\\AirportManagement-main\\AM.ApplicationCore\\AM.ApplicationCore.csproj",
       "packagesPath": "C:\\Users\\RayenBourguiba\\.nuget\\packages\\",
-      "outputPath": "C:\\Main\\TWIN\\Net\\Airport-Management\\AM.ApplicationCore\\obj\\",
+      "outputPath": "C:\\Users\\RayenBourguiba\\Downloads\\AirportManagement-main\\AirportManagement-main\\AM.ApplicationCore\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\RayenBourguiba\\AppData\\Roaming\\NuGet\\NuGet.Config",

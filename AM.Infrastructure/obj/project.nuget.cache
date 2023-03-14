@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Dg7vi2XfxfHZea8JiewtxeHRDRP+1W86dS/gAkLMY+0vJNkS12ovtpWxOd5/lF/IbeHMMINM3F+O+kBzcpMSgg==",
+  "dgSpecHash": "ILWkjTxkuY5puofFKUt7T59jcVpyOt+uGgjZKF2RgF73MlOd3dC63ROk4i9G7ZdP6oHWt9MZsYiARXFY9CV1YA==",
   "success": true,
-  "projectFilePath": "C:\\Main\\TWIN\\Net\\Airport-Management\\AM.Infrastructure\\AM.Infrastructure.csproj",
+  "projectFilePath": "C:\\Users\\RayenBourguiba\\Downloads\\AirportManagement-main\\AirportManagement-main\\AM.Infrastructure\\AM.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\RayenBourguiba\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\RayenBourguiba\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

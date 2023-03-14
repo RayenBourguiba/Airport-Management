@@ -5,18 +5,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AM.ApplicationCore.Infterfaces
+namespace AM.ApplicationCore.Interfaces
 {
     public interface IServiceFlight
     {
-        IList<DateTime> GetFlightDates(string destination);
+        List<DateTime> GetFlightDates(string destination);
+        void GetFlights(string filterType, string filterValue);
         void ShowFlightDetails(Plane plane);
         int ProgrammedFlightNumber(DateTime startDate);
         double DurationAverage(string destination);
-        IList<Flight> OrderedDurationFlights();
-        // IList<Traveller> SeniorTravellers(Flight flight);
-        void DestinationGroupedFlights();
-        void GetFlights(string filterType, string filterValue);
+        IEnumerable<Flight> OrderedDurationFlights();
+     //   IEnumerable<Traveller> SeniorTravellers(Flight f);
+        IGrouping<string, IEnumerable<Flight>> DestinationGroupedFlights();
 
     }
 }

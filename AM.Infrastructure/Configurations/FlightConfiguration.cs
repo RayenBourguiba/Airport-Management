@@ -14,18 +14,24 @@ namespace AM.Infrastructure.Configurations
     {
         public void Configure(EntityTypeBuilder<Flight> builder)
         {
+            //Configuration fluent API 
             builder.HasKey(f => f.FlightId);
+            // changement de nom de table au niveau de DB
             builder.ToTable("Vols");
 
-            // Configuration 1..*
+            //configuration OneToMany 1..*
             builder.HasOne(f => f.Plane)
-                .WithMany(p => p.Flights)
-                .HasForeignKey(f => f.PlaneFk)
-                .OnDelete(DeleteBehavior.SetNull);
-            // config *..*
-            /*builder.HasMany(f => f.Passengers)
-                .WithMany(p => p.Flights)
-                .UsingEntity(pf => pf.ToTable("MyReservations"));*/
+                   .WithMany(p => p.Flights)
+                   .HasForeignKey(f => f.PlaneFk)
+                   .OnDelete(DeleteBehavior.SetNull);
+
+
+            //configuration *..*
+
+            //builder.HasMany(f => f.Passengers)
+            //       .WithMany(p => p.Flights)
+            //       .UsingEntity(pf => pf.ToTable("MyReservations"));
+
         }
     }
 }

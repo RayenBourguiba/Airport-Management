@@ -3645,11 +3645,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Main\\TWIN\\Net\\Airport-Management\\AM.UI.Console\\AM.UI.Console.csproj",
+      "projectUniqueName": "C:\\Users\\RayenBourguiba\\Downloads\\AirportManagement-main\\AirportManagement-main\\AM.UI.Console\\AM.UI.Console.csproj",
       "projectName": "AM.UI.Console",
-      "projectPath": "C:\\Main\\TWIN\\Net\\Airport-Management\\AM.UI.Console\\AM.UI.Console.csproj",
+      "projectPath": "C:\\Users\\RayenBourguiba\\Downloads\\AirportManagement-main\\AirportManagement-main\\AM.UI.Console\\AM.UI.Console.csproj",
       "packagesPath": "C:\\Users\\RayenBourguiba\\.nuget\\packages\\",
-      "outputPath": "C:\\Main\\TWIN\\Net\\Airport-Management\\AM.UI.Console\\obj\\",
+      "outputPath": "C:\\Users\\RayenBourguiba\\Downloads\\AirportManagement-main\\AirportManagement-main\\AM.UI.Console\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\RayenBourguiba\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3666,11 +3666,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Main\\TWIN\\Net\\Airport-Management\\AM.ApplicationCore\\AM.ApplicationCore.csproj": {
-              "projectPath": "C:\\Main\\TWIN\\Net\\Airport-Management\\AM.ApplicationCore\\AM.ApplicationCore.csproj"
+            "C:\\Users\\RayenBourguiba\\Downloads\\AirportManagement-main\\AirportManagement-main\\AM.ApplicationCore\\AM.ApplicationCore.csproj": {
+              "projectPath": "C:\\Users\\RayenBourguiba\\Downloads\\AirportManagement-main\\AirportManagement-main\\AM.ApplicationCore\\AM.ApplicationCore.csproj"
             },
-            "C:\\Main\\TWIN\\Net\\Airport-Management\\AM.Infrastructure\\AM.Infrastructure.csproj": {
-              "projectPath": "C:\\Main\\TWIN\\Net\\Airport-Management\\AM.Infrastructure\\AM.Infrastructure.csproj"
+            "C:\\Users\\RayenBourguiba\\Downloads\\AirportManagement-main\\AirportManagement-main\\AM.Infrastructure\\AM.Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\RayenBourguiba\\Downloads\\AirportManagement-main\\AirportManagement-main\\AM.Infrastructure\\AM.Infrastructure.csproj"
             }
           }
         }
