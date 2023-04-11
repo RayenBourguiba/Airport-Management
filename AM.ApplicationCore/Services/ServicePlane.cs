@@ -25,8 +25,8 @@ namespace AM.ApplicationCore.Services
             foreach (var plane in GetAll().Where(p => (DateTime.Now - p.ManufactureDate).TotalDays > 365 * 10).ToList())
             {
                 Delete(plane);
-                Commit();
             }
+            Commit();
         }
 
         public IList<IGrouping<int,Flight>> GetFlights(int n)

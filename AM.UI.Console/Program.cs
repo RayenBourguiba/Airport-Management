@@ -39,10 +39,6 @@ s1.PassengerType();
 Console.WriteLine("La méthode PassengerType t1:");
 t1.PassengerType();
 
-
-
-
-
 ////TP2-Q5:Créer une instance de la classe ServiceFlight
 //ServiceFlight sf = new ServiceFlight();
 ////TP2-Q5:Affecter listFlights à la propriété Flights de la classe ServiceFlight
@@ -129,4 +125,3 @@ t1.PassengerType();
 //service.Add(f1);
 
 //ctx.SaveChanges();
-
