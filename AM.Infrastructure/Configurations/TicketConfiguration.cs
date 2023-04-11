@@ -13,17 +13,20 @@ namespace AM.Infrastructure.Configurations
     {
         public void Configure(EntityTypeBuilder<Ticket> builder)
         {
-            builder.HasKey(p => new { p.FlightFk, p.PassengerFk });
+            builder.HasKey(t => new
+            {
+                t.FlightFK,
+                t.PassengerFK,
+                
+            });
 
+            builder.HasOne(t => t.Flignt)
+               .WithMany(f => f.Tickets)
+               .HasForeignKey(t => t.FlightFK);
 
-
-            // foreign key avec code ou bien avec annotations
             builder.HasOne(t => t.Passenger)
-                .WithMany(p => p.Tickets)
-                .HasForeignKey(p => p.PassengerFk);
-            builder.HasOne(t => t.Flight)
-                .WithMany(p => p.Tickets)
-                .HasForeignKey(p => p.FlightFk);
+              .WithMany(p => p.Tickets)
+              .HasForeignKey(t => t.PassengerFK);
         }
     }
 }

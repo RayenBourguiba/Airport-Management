@@ -7,24 +7,25 @@ using System.Threading.Tasks;
 
 namespace AM.ApplicationCore.Domain
 {
-    //[table("Vols")]   annotations 
     public class Flight
     {
+        public string Airline { get; set; }
         public int FlightId { get; set; }
         public DateTime FlightDate { get; set; }
         public int EstimatedDuration { get; set; }
         public DateTime EffectiveArrival { get; set; }
         public string Departure { get; set; }
         public string Destination { get; set; }
-        public virtual List<Ticket>? Tickets { get; set; }
-       // [ForeignKey("PlaneId")]
-        public virtual Plane? Plane { get; set; }// prop navigation      => nakhtaar wahda fehom 
+        //prop de navigation
+        //public virtual List<Passenger> Passengers { get; set; }
+        public virtual List<Ticket> Tickets { get; set; }
+        public  virtual Plane Plane { get; set; }
         [ForeignKey("Plane")]
-        public int? PlaneFk { get; set; } // prop clé etrangère  => nakhtar wahda fehom
+        public virtual int PlaneId { get; set; }
+        //TP1-Q6: Réimplémenter la méthode ToString()
         public override string ToString()
         {
-            return "FlightDate: " + FlightDate + " Destination: " + Destination + " EstimatedDuration: " + EstimatedDuration;
+            return "FlightId: " + FlightId + " FlightDate: " + FlightDate + " Destination: " + Destination;
         }
-
     }
 }
